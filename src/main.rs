@@ -45,4 +45,28 @@ fn main() {
     println!("Slice of string: {}", sa);
 
     println!("---------------------");
+
+    // loops
+    // for
+    for i in 0..5 {
+        // 5 is not inclusive. to include 5, use 0..=5
+        println!("i in for loop = {}", i);
+    }
+    // while
+    let mut count: u8 = 0;
+    while count < 5 {
+        println!("count in while loop = {}", count);
+        count += 1;
+    }
+    // loop
+    let mut n: u8 = 0;
+    loop {
+        if n >= 5 {
+            break;
+        }
+        println!("n in loop = {}", n);
+        n += 1;
+    }
+
+    println!("---------------------");
 }
