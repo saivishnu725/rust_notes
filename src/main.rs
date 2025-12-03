@@ -1,5 +1,5 @@
 // Result enum is used for error handling
-fn divide(a: i8, b: i8) -> Result<i8, &'static str> {
+fn divide(a: u8, b: u8) -> Result<u8, &'static str> {
     if b == 0 {
         Err("Division by zero")
     } else {
@@ -21,7 +21,7 @@ fn main() {
     println!("---------------------");
 
     // arrays
-    let arr: [i32; 5] = [1, 2, 3, 4, 5];
+    let arr: [u8; 5] = [1, 2, 3, 4, 5];
     println!("Array: {:?}", arr);
     let two = &arr[2..4]; // 4 is not inclusive. to include 4, use 2..=4
     println!("Slice of array: {:?}", two);
@@ -80,8 +80,8 @@ fn main() {
     println!("---------------------");
 
     // error handling
-    // let num: Result<i32, &str> = Ok(10); // change to Err to see error
-    let num: Result<i32, &str> = Err("An error occurred"); // uncomment to see error case
+    // let num: Result<u8, &str> = Ok(10); // change to Err to see error
+    let num: Result<u8, &str> = Err("An error occurred"); // uncomment to see error case
     match num {
         Ok(n) => println!("The number is: {}", n),
         Err(e) => println!("Error: {}", e), // handle the error without crashing
@@ -102,8 +102,8 @@ fn main() {
     println!("---------------------");
 
     // Demonstrate divide function with error handling
-    let mut a: i8 = 50;
-    let mut b: i8 = 5;
+    let mut a: u8 = 50;
+    let mut b: u8 = 5;
     match divide(a, b) {
         Ok(result) => println!("{a} / {b} = {}", result),
         Err(e) => println!("Error: {}", e),
