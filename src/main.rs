@@ -30,6 +30,8 @@ fn main() {
     println!("Array: {:?}", arr);
     let two = &arr[2..4]; // 4 is not inclusive. to include 4, use 2..=4
     println!("Slice of array: {:?}", two);
+    let arr2: [u8; 3] = [10; 3]; // array of size 3 and all the values are 10; same as [10, 10, 10]
+    println!("Array a2: {:?}", arr2);
 
     println!("---------------------");
 
@@ -133,4 +135,6 @@ fn main() {
     }
 
     println!("---------------------");
+
+    //
 }
