@@ -30,6 +30,7 @@ can be used as a cheatsheet once finished (mostly)
     * *passing* on the error from a fn to the fn call using `Result` enum -> `divide(u8, u8)`
     * *passing* on the error (technically speaking, its a lack of content) from a fn to the fn call using `Option` enum -> `is_os_even(i32)`
 8. struct
+9. enum
 
 ## license
 

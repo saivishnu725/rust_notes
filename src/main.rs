@@ -149,4 +149,18 @@ fn main() {
     println!("person struct: name = {}, age = {}", p1.name, p1.age);
 
     println!("---------------------");
+
+    // demonstrate enums
+    enum Color {
+        _Red,
+        _Green,
+        _Blue,
+    }
+    let c1 = Color::_Red;
+    match c1 {
+        Color::_Red => println!("color is red"),
+        Color::_Green => println!("color is green"),
+        Color::_Blue => println!("color is blue"),
+    }
+    println!("---------------------");
 }
