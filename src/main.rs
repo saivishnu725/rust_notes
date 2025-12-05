@@ -1,17 +1,18 @@
-// Result enum is used for error handling
+// result enum is used for error handling
 fn divide(a: u8, b: u8) -> Result<u8, &'static str> {
     if b == 0 {
-        Err("Division by zero")
+        Err("division by zero")
     } else {
         Ok(a / b)
     }
 }
 
-// Option enum is used for values that can be optional
+// option enum is used for values that can be optional
 fn is_pos_even(n: i8) -> Option<bool> {
     if n < 0 { None } else { Some(n % 2 == 0) }
 }
 
+// main function
 fn main() {
     println!("---------------------");
 
@@ -21,30 +22,30 @@ fn main() {
     println!("immutable x = {}, mutable y = {}", x, y);
     // x += 1; // this will give error as x is immutable
     y += 1;
-    println!("After incrementing: x = {}(can not incr) y = {}", x, y);
+    println!("after incrementing: x = {}(can not incr) y = {}", x, y);
 
     println!("---------------------");
 
     // arrays
     let arr: [u8; 5] = [1, 2, 3, 4, 5];
-    println!("Array: {:?}", arr);
+    println!("array: {:?}", arr);
     let two = &arr[2..4]; // 4 is not inclusive. to include 4, use 2..=4
-    println!("Slice of array: {:?}", two);
+    println!("slice of array: {:?}", two);
     let arr2: [u8; 3] = [10; 3]; // array of size 3 and all the values are 10; same as [10, 10, 10]
-    println!("Array a2: {:?}", arr2);
+    println!("array a2: {:?}", arr2);
 
     println!("---------------------");
 
     // tuples
     let tup: (u8, f32, char, bool) = (1, 2.4, 'a', true);
-    println!("Tuple: {:?}", tup);
+    println!("tuple: {:?}", tup);
     println!(
-        "Accessing tuple elements: first = {}, second = {}, third = {}, fourth = {}",
+        "accessing tuple elements: first = {}, second = {}, third = {}, fourth = {}",
         tup.0, tup.1, tup.2, tup.3
     );
     let (a, b, c, d) = tup; // destructuring
     println!(
-        "Destructured tuple: a = {}, b = {}, c = {}, d = {}",
+        "destructured tuple: a = {}, b = {}, c = {}, d = {}",
         a, b, c, d
     );
 
@@ -52,13 +53,13 @@ fn main() {
 
     // strings
     let mut s: String = String::from("hello");
-    println!("String: {}", s);
+    println!("string: {}", s);
     s.push_str(", world!");
-    println!("String after push_str(): {}", s);
+    println!("string after push_str(): {}", s);
 
     // string slices &str
     let sa: &str = &s[0..5]; // 5 is not inclusive. to include 5, use 0..=5
-    println!("Slice of string: {}", sa);
+    println!("slice of string: {}", sa);
 
     println!("---------------------");
 
@@ -88,10 +89,10 @@ fn main() {
 
     // error handling
     // let num: Result<u8, &str> = Ok(10); // change to Err to see error
-    let num: Result<u8, &str> = Err("An error occurred"); // uncomment to see error case
+    let num: Result<u8, &str> = Err("an error occurred"); // uncomment to see error case
     match num {
-        Ok(n) => println!("The number is: {}", n),
-        Err(e) => println!("Error: {}", e), // handle the error without crashing
+        Ok(n) => println!("the number is: {}", n),
+        Err(e) => println!("error: {}", e), // handle the error without crashing
     }
 
     println!("---------------------");
@@ -101,9 +102,9 @@ fn main() {
     let condition = false; // change to true to see panic
     // let condition = true; // uncomment to see panic
     if condition {
-        panic!("This is a panic! The program will crash.");
+        panic!("this is a panic! the program will crash.");
     } else {
-        println!("No panic occurred. Program continues.");
+        println!("no panic occurred. program continues.");
     }
 
     println!("---------------------");
@@ -113,13 +114,13 @@ fn main() {
     let mut b: u8 = 5;
     match divide(a, b) {
         Ok(result) => println!("{a} / {b} = {}", result),
-        Err(e) => println!("Error: {}", e),
+        Err(e) => println!("error: {}", e),
     }
     a = 5;
     b = 0;
     match divide(a, b) {
         Ok(result) => println!("{a} / {b} = {}", result),
-        Err(e) => println!("Error: {}", e),
+        Err(e) => println!("error: {}", e),
     }
 
     println!("---------------------");
